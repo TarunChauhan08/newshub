@@ -1,0 +1,28 @@
+<sly data-sly-use.model="com.mycompany.myproject.core.models.ProductDetailsModel"></sly>
+
+<div class="cmp-productdetails" data-sly-test="${model.variants && model.variants.size > 0}">
+    <h2 class="cmp-productdetails__title">Product Details</h2>
+    <table class="cmp-productdetails__table">
+        <thead>
+            <tr>
+                <th>Variant Name</th>
+                <th>Price</th>
+                <th>Colors</th>
+                <th>Features</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr data-sly-list.variant="${model.variants}">
+                <td>${variant.variantName}</td>
+                <td>${variant.price}</td>
+                <td>${variant.colors}</td>
+                <td>${variant.features}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="cmp-productdetails cmp-productdetails--empty"
+    data-sly-test="${!model.variants || model.variants.size == 0}">
+    <p>No product variants have been configured. Please open the dialog to add variants.</p>
+</div>
