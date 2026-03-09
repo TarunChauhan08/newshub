@@ -6,7 +6,7 @@
 
         "create service user newshub-content-reader",
         "create service user newshub-content-writer",
-        "set ACL for newshub-content-reader\n allow jcr:read on /content/newshub\nend",
-        "set ACL for newshub-content-writer\n allow jcr:read on /content/newshub\n allow rep:write on /content/newshub\nend"
+        "set ACL for newshub-content-reader\n allow jcr:read on /content/myproject\nend",
+        "set ACL for newshub-content-writer\n allow jcr:read on /content/myproject\n allow rep:write on /content/myproject\nend"
     ]
 }
