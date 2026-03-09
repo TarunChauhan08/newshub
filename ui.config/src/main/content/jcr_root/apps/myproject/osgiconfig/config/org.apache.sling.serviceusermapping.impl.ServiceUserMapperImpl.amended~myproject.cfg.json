@@ -1,0 +1,6 @@
+{
+  "user.mapping": [
+    "myproject.core:content-reader=newshub-content-reader",
+    "myproject.core:content-writer=newshub-content-writer"
+  ]
+}
