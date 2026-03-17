@@ -72,30 +72,21 @@ public class AutomaticArticleArchiver implements Runnable {
                     Node node = session.getNode(hit.getPath());
 
                     String newPath = "/content/myproject/us/en/archive/" + node.getName();
-
                     session.move(hit.getPath(), newPath);
-
                     success++;
                     batchCount++;
-
                     if(batchCount == 20){
                         session.save();
                         batchCount = 0;
                     }
-
                 } catch(Exception e){
-
                     failed++;
                     session.refresh(false);
-
                     System.out.println("Failed to archive: " + hit.getPath());
                 }
             }
-
             session.save();
-
             System.out.println("Archive Summary: success=" + success + " failed=" + failed);
-
         } catch(Exception e){
             e.printStackTrace();
         }
